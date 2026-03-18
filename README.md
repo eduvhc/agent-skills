@@ -4,6 +4,7 @@ A curated collection of AI agent skills for .NET development, published to [skil
 
 [![skills.sh](https://img.shields.io/badge/skills.sh-published-blue?style=flat-square)](https://skills.sh)
 [![.NET](https://img.shields.io/badge/.NET-10-purple?style=flat-square&logo=dotnet)](https://dotnet.microsoft.com/)
+[![Bun](https://img.shields.io/badge/Bun-supported-f9f1e1?style=flat-square&logo=bun)](https://bun.sh/)
 
 ---
 
@@ -20,7 +21,11 @@ Complete guidance for building distributed applications with .NET Aspire 13 / .N
 - **Observability** - OTel configuration, dashboard integration, production monitoring
 
 ```bash
+# Using npm/npx
 npx skills add eduvhc/agent-skills --skill dotnet-aspire
+
+# Using Bun
+bunx skills add eduvhc/agent-skills --skill dotnet-aspire
 ```
 
 ---
@@ -37,7 +42,11 @@ Comprehensive observability implementation covering all three signals:
 - **Auto-instrumentation** - CLR profiler, Docker, Kubernetes patterns
 
 ```bash
+# Using npm/npx
 npx skills add eduvhc/agent-skills --skill opentelemetry-dotnet
+
+# Using Bun
+bunx skills add eduvhc/agent-skills --skill opentelemetry-dotnet
 ```
 
 ---
@@ -47,23 +56,37 @@ npx skills add eduvhc/agent-skills --skill opentelemetry-dotnet
 ### Install All Skills
 
 ```bash
+# npm/npx
 npx skills add eduvhc/agent-skills
+
+# Bun
+bunx skills add eduvhc/agent-skills
 ```
 
 ### Install Specific Skills
 
 ```bash
-# Just the Aspire skill
+# Just the Aspire skill (npm)
 npx skills add eduvhc/agent-skills --skill dotnet-aspire
 
-# Just the OpenTelemetry skill
+# Just the Aspire skill (Bun)
+bunx skills add eduvhc/agent-skills --skill dotnet-aspire
+
+# Just the OpenTelemetry skill (npm)
 npx skills add eduvhc/agent-skills --skill opentelemetry-dotnet
+
+# Just the OpenTelemetry skill (Bun)
+bunx skills add eduvhc/agent-skills --skill opentelemetry-dotnet
 ```
 
 ### Install to Specific Agents
 
 ```bash
+# npm/npx
 npx skills add eduvhc/agent-skills --agent claude-code --agent opencode
+
+# Bun
+bunx skills add eduvhc/agent-skills --agent claude-code --agent opencode
 ```
 
 ---
