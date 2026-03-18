@@ -10,6 +10,8 @@ A curated collection of AI agent skills for .NET development, published to [skil
 
 ## 📦 Available Skills
 
+> **✅ Current Status**: All skills are up to date with **.NET 10** (latest stable) and **OpenTelemetry 1.15.0** patterns as of March 2026.
+
 ### 🔷 dotnet-aspire
 **Cloud-native .NET development with Aspire**
 
@@ -33,7 +35,7 @@ bunx skills add eduvhc/agent-skills --skill dotnet-aspire
 ### 📊 opentelemetry-dotnet
 **OpenTelemetry for .NET 10**
 
-Comprehensive observability implementation covering all three signals:
+Comprehensive observability implementation with **OpenTelemetry 1.15.0** covering all three signals:
 
 - **Tracing** - `ActivitySource`, spans, semantic conventions, context propagation
 - **Metrics** - `IMeterFactory`, instruments, exemplars, cardinality management
