@@ -1,6 +1,7 @@
 ---
 name: dotnet-aspire
 description: .NET Aspire (Aspire 13 / .NET 10) skill covering AppHost orchestration, ServiceDefaults, OpenTelemetry integration, integration testing with DistributedApplicationTestingBuilder, health checks, service discovery, and best practices. Use for any .NET Aspire development task.
+version: 1.0.0
 references:
   - apphost
   - service-defaults

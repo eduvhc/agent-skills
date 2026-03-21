@@ -1,6 +1,7 @@
 ---
 name: opentelemetry-dotnet
 description: OpenTelemetry for .NET 10 skill covering tracing (ActivitySource, spans, semantic conventions), metrics (IMeterFactory, instruments, exemplars), logging (ILogger bridge), exporters (OTLP, Prometheus, Console), sampling, context propagation, and all instrumentation libraries. Use for any OpenTelemetry .NET implementation task, OTel setup, observability questions, or telemetry debugging.
+version: 1.0.0
 references:
   - packages
   - setup
