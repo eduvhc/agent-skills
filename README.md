@@ -53,6 +53,29 @@ bunx skills add eduvhc/agent-skills --skill opentelemetry-dotnet
 
 ---
 
+### 🔵 azure-devops-dotnet
+**Azure DevOps YAML pipelines for .NET & NuGet**
+
+Complete pipeline authoring for .NET 8/9/10 projects and NuGet packages:
+
+- **DotNetCoreCLI@2** - restore, build, test, publish, pack, push
+- **NuGetAuthenticate@1** - same-org and cross-org feed authentication
+- **NuGet caching** - `Cache@2` with lock files, typical 5× speedup
+- **Versioning strategies** - GitVersion, byBuildNumber, byEnvVar, byPrereleaseNumber
+- **Multi-stage pipelines** - build → publish packages → staging → production
+- **Deployment strategies** - `runOnce`, `rolling`, `canary`
+- **2025/2026 gotchas** - ubuntu-24.04 NuGetCommand@2 breakage, deployment job variables
+
+```bash
+# Using npm/npx
+npx skills add eduvhc/agent-skills --skill azure-devops-dotnet
+
+# Using Bun
+bunx skills add eduvhc/agent-skills --skill azure-devops-dotnet
+```
+
+---
+
 ## 🚀 Quick Start
 
 ### Install All Skills
@@ -68,17 +91,14 @@ bunx skills add eduvhc/agent-skills
 ### Install Specific Skills
 
 ```bash
-# Just the Aspire skill (npm)
+# dotnet-aspire
 npx skills add eduvhc/agent-skills --skill dotnet-aspire
 
-# Just the Aspire skill (Bun)
-bunx skills add eduvhc/agent-skills --skill dotnet-aspire
-
-# Just the OpenTelemetry skill (npm)
+# opentelemetry-dotnet
 npx skills add eduvhc/agent-skills --skill opentelemetry-dotnet
 
-# Just the OpenTelemetry skill (Bun)
-bunx skills add eduvhc/agent-skills --skill opentelemetry-dotnet
+# azure-devops-dotnet
+npx skills add eduvhc/agent-skills --skill azure-devops-dotnet
 ```
 
 ### Install to Specific Agents
@@ -100,7 +120,8 @@ Each skill includes comprehensive reference documentation:
 | Skill | References |
 |-------|------------|
 | `dotnet-aspire` | `apphost.md`, `service-defaults.md`, `testing.md`, `opentelemetry.md`, `health-checks.md` |
-| `opentelemetry-dotnet` | `tracing.md`, `metrics.md`, `logging.md`, `exporters.md`, `sampling.md`, `instrumentation.md`, `production.md`, `pitfalls.md` |
+| `opentelemetry-dotnet` | `tracing.md`, `metrics.md`, `logging.md`, `exporters.md`, `sampling.md`, `propagation.md`, `instrumentation.md`, `hybrid.md`, `semantic-conventions.md`, `production.md`, `pitfalls.md`, `packages.md`, `setup.md` |
+| `azure-devops-dotnet` | Inline — all content in `SKILL.md` |
 
 ---
 
@@ -118,6 +139,13 @@ Each skill includes comprehensive reference documentation:
 - Configuring OTLP exporters for Aspire Dashboard, Jaeger, or Grafana
 - Implementing hybrid auto-instrumentation + manual spans
 - Troubleshooting missing telemetry or high memory usage
+
+### When to use `azure-devops-dotnet`:
+- Building or publishing .NET projects in Azure DevOps pipelines
+- Authenticating to Azure Artifacts feeds (same-org or cross-org)
+- Setting up NuGet package caching and versioning strategies
+- Authoring multi-stage pipelines with deployment jobs and approval gates
+- Troubleshooting broken restore on ubuntu-latest (24.04)
 
 ---
 
