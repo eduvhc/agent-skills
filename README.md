@@ -76,6 +76,30 @@ bunx skills add eduvhc/agent-skills --skill azure-devops-dotnet
 
 ---
 
+### ⚡ dotnet-native-aot
+**Native AOT compilation for .NET 10**
+
+Complete guidance for building and deploying Native AOT applications:
+
+- **Project setup** - `PublishAot`, trimming feature switches, size optimization
+- **JSON source generators** - `JsonSerializerContext`, AOT-safe serialization patterns
+- **ASP.NET Core Minimal APIs** - `CreateSlimBuilder`, named types, compatibility matrix
+- **SignalR** - AOT-compatible hub patterns, `JsonHubProtocolOptions`
+- **Data access** - Raw ADO.NET repository pattern, Dapper.AOT, why not EF Core
+- **Docker** - Multi-stage builds with `-aot` SDK images, Alpine (~18 MB images)
+- **Trimming** - IL warning resolution, `DynamicallyAccessedMembers`, feature switches
+- **Pitfalls** - Reflection, dynamic code, serialization gotchas, performance tradeoffs
+
+```bash
+# Using npm/npx
+npx skills add eduvhc/agent-skills --skill dotnet-native-aot
+
+# Using Bun
+bunx skills add eduvhc/agent-skills --skill dotnet-native-aot
+```
+
+---
+
 ## 🚀 Quick Start
 
 ### Install All Skills
@@ -99,6 +123,9 @@ npx skills add eduvhc/agent-skills --skill opentelemetry-dotnet
 
 # azure-devops-dotnet
 npx skills add eduvhc/agent-skills --skill azure-devops-dotnet
+
+# dotnet-native-aot
+npx skills add eduvhc/agent-skills --skill dotnet-native-aot
 ```
 
 ### Install to Specific Agents
@@ -122,6 +149,7 @@ Each skill includes comprehensive reference documentation:
 | `dotnet-aspire` | `apphost.md`, `service-defaults.md`, `testing.md`, `opentelemetry.md`, `health-checks.md` |
 | `opentelemetry-dotnet` | `tracing.md`, `metrics.md`, `logging.md`, `exporters.md`, `sampling.md`, `propagation.md`, `instrumentation.md`, `hybrid.md`, `semantic-conventions.md`, `production.md`, `pitfalls.md`, `packages.md`, `setup.md` |
 | `azure-devops-dotnet` | Inline — all content in `SKILL.md` |
+| `dotnet-native-aot` | `setup.md`, `json-serialization.md`, `aspnet-minimal-api.md`, `signalr.md`, `data-access.md`, `docker.md`, `trimming.md`, `pitfalls.md` |
 
 ---
 
@@ -139,6 +167,14 @@ Each skill includes comprehensive reference documentation:
 - Configuring OTLP exporters for Aspire Dashboard, Jaeger, or Grafana
 - Implementing hybrid auto-instrumentation + manual spans
 - Troubleshooting missing telemetry or high memory usage
+
+### When to use `dotnet-native-aot`:
+- Configuring a .NET 10 project for Native AOT publishing
+- Setting up JSON source generators for AOT-compatible serialization
+- Replacing Dapper/EF Core with AOT-safe data access patterns
+- Building minimal Docker images with AOT (Alpine ~18 MB)
+- Resolving IL2xxx/IL3xxx trimming warnings
+- Understanding what's AOT-compatible (SignalR, Minimal APIs, etc.)
 
 ### When to use `azure-devops-dotnet`:
 - Building or publishing .NET projects in Azure DevOps pipelines
