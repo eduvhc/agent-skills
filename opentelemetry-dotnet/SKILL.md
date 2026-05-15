@@ -141,6 +141,7 @@ Application Code                  OTel SDK Pipeline              Backend
 5. **Static readonly ActivitySource/Meter** — never create per-request; extremely expensive
 6. **IMeterFactory for DI apps** — prefer over static Meter for proper lifecycle and test isolation
 7. **Dispose providers** — in non-DI apps, dispose TracerProvider/MeterProvider or the last batch is dropped
+8. **Shared libraries: no SDK, no `OpenTelemetry.Api`, no-op without a listener** — instrument with BCL `System.Diagnostics` only, centralize in one diagnostics class (no magic strings), never throw into the business path; consumers opt in via `AddSource()`. See `references/library-instrumentation.md`
 
 ## Key APIs Quick Reference
 
@@ -169,6 +170,7 @@ Application Code                  OTel SDK Pipeline              Backend
 - `references/propagation.md` — W3C TraceContext, Baggage, B3, manual inject/extract
 - `references/semantic-conventions.md` — HTTP, DB, messaging, resource attributes
 - `references/instrumentation.md` — all instrumentation libraries with config examples
+- `references/library-instrumentation.md` — instrumenting shared libraries OTel-optional: BCL-only (no `OpenTelemetry.Api`), no-op without listener, centralized diagnostics class, BCL `DistributedContextPropagator`, App Insights coexistence
 - `references/hybrid.md` — hybrid auto+manual approach: Plugin API, RabbitMQ/Kafka/Postgres/Redis/EF Core/MassTransit/Azure Service Bus/gRPC patterns, Docker, support matrix
 - `references/production.md` — resource attributes, batch config, self-diagnostics, retry
 - `references/pitfalls.md` — 12 documented pitfalls with fixes and explanations

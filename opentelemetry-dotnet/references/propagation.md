@@ -102,3 +102,9 @@ using var activity = _source.StartActivity(
     ActivityKind.Consumer,
     extractCtx.ActivityContext);
 ```
+
+> The examples above use `Propagators.DefaultTextMapPropagator`, which requires
+> `OpenTelemetry.Api`. In a **shared library** that must not take an OTel
+> dependency, use the BCL `System.Diagnostics.DistributedContextPropagator`
+> instead (same W3C tracecontext + baggage, no package). See
+> `library-instrumentation.md`.
